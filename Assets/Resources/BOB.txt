@@ -1,0 +1,20 @@
+{
+    "m_saveShapeDatas": [
+        {
+            "name": "Cube(Clone)",
+            "objectPosition": {
+                "x": 3.2300000190734865,
+                "y": 0.5,
+                "z": -7.449999809265137
+            }
+        },
+        {
+            "name": "Cube(Clone)",
+            "objectPosition": {
+                "x": -3.850541114807129,
+                "y": 0.5,
+                "z": -11.959916114807129
+            }
+        }
+    ]
+}

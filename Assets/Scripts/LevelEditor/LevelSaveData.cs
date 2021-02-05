@@ -17,7 +17,7 @@ public class SaveShapeData
 
 public class LevelSave
 {
-    static string s_jsonPath = Application.dataPath + "/Json/";
+    static string s_jsonPath = Application.dataPath + "/Resources/";
 
     static public void Save(ShapeData[] t_shapes)
     {
@@ -35,8 +35,20 @@ public class LevelSave
         }
 
         string jsonData = JsonUtility.ToJson(levelData, true);
-        string fullPath = s_jsonPath + "BOB" + ".json";
+        string fullPath = s_jsonPath + "BOB" + ".txt";
 
         System.IO.File.WriteAllText(fullPath, jsonData);
+    }
+    static public LevelData loadLevel()
+    {
+        TextAsset loadFile = Resources.Load<TextAsset>("BOB");
+        Debug.Log(loadFile.text);
+        if(loadFile != null)
+        {
+            LevelData loadLevel = JsonUtility.FromJson<LevelData>(loadFile.text);
+
+            return loadLevel;
+        }
+        return null;
     }
 }
