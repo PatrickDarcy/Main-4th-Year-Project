@@ -14,6 +14,7 @@ enum Shapes
 public class GameController : MonoBehaviour
 {
     public List<GameObject> m_shapes;
+    public GameObject m_playerBackPack;
 
     // Start is called before the first frame update
     void Awake()
@@ -49,12 +50,34 @@ public class GameController : MonoBehaviour
                         break;
                 }
             }
+            foreach(collectables inventoryData in levelData.m_saveInventoryData.itemTypes)
+            {
+                switch(inventoryData)
+                {
+                    case collectables.WOOD:
+                        m_playerBackPack.GetComponent<InventoryScript>().inventory.Add(collectables.WOOD);
+                        break;
+                    case collectables.STONE:
+                        m_playerBackPack.GetComponent<InventoryScript>().inventory.Add(collectables.STONE);
+                        break;
+                    case collectables.MUSHROOM1:
+                        m_playerBackPack.GetComponent<InventoryScript>().inventory.Add(collectables.MUSHROOM1);
+                        break;
+                    case collectables.MUSHROOM2:
+                        m_playerBackPack.GetComponent<InventoryScript>().inventory.Add(collectables.MUSHROOM2);
+                        break;
+                    default:
+                        break;
+                }
+            }
+
         }
     }
 
     private void OnApplicationQuit()
     {
         ShapeData[] shapes = FindObjectsOfType<ShapeData>();
-        LevelSave.Save(shapes);
+        InventoryData inventoryData = FindObjectOfType<InventoryData>();
+        LevelSave.Save(shapes,inventoryData);
     }
 }

@@ -8,15 +8,16 @@ TagManager:
   - Glass
   - Cube
   - Door
+  - Collectable
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Background
   - Water
   - UI
   - 
-  - 
+  - Buttons
   - Grab
   - Ground
   - Player

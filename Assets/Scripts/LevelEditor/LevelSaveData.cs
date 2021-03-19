@@ -1,12 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-
 public class LevelData
 {
     public List<SaveShapeData> m_saveShapeDatas = new List<SaveShapeData>();
+    public SaveInventoryData m_saveInventoryData = new SaveInventoryData();
 }
 [System.Serializable]
 public class SaveShapeData
@@ -14,12 +13,17 @@ public class SaveShapeData
     public string name;
     public Vector3 objectPosition;
 }
+[System.Serializable]
+public class SaveInventoryData
+{
+    public List<collectables> itemTypes = new List<collectables>();
+}
 
 public class LevelSave
 {
     static string s_jsonPath = Application.dataPath + "/Resources/";
 
-    static public void Save(ShapeData[] t_shapes)
+    static public void Save(ShapeData[] t_shapes, InventoryData t_inventory)
     {
         LevelData levelData = new LevelData();
 
@@ -33,6 +37,10 @@ public class LevelSave
 
             levelData.m_saveShapeDatas.Add(shapeData);
         }
+
+        SaveInventoryData inventoryData = new SaveInventoryData();
+        inventoryData.itemTypes = t_inventory.m_inventoryItems;
+        levelData.m_saveInventoryData = inventoryData;
 
         string jsonData = JsonUtility.ToJson(levelData, true);
         string fullPath = s_jsonPath + "BOB" + ".txt";
