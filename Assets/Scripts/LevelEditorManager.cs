@@ -12,20 +12,21 @@ public class LevelEditorManager : MonoBehaviour
 
     private Vector2 m_inputAxis;
     private bool m_isObjGrabbed;
+    private GameObject m_worldObject;
+    private bool m_objectSelected;
     public void SpawnWorldObject(GameObject t_worldObject)
     {
-        InputDevice device = InputDevices.GetDeviceAtXRNode(m_inputSource);
-        device.TryGetFeatureValue(CommonUsages.gripButton, out m_isObjGrabbed);
-
-        if (m_isObjGrabbed)
-        {
-            Instantiate<GameObject>(t_worldObject, m_moverRay.GetComponent<XRRayInteractor>()., Quaternion.identity);
-        }
+        m_objectSelected = true;
+        m_worldObject = t_worldObject;
     }
     public void Update()
     {
         InputDevice device = InputDevices.GetDeviceAtXRNode(m_inputSource);
         device.TryGetFeatureValue(CommonUsages.primary2DAxis, out m_inputAxis);
+        if(m_objectSelected)
+        {
+            SelectedObject();
+        }
     }
 
     private void FixedUpdate()
@@ -39,5 +40,18 @@ public class LevelEditorManager : MonoBehaviour
             m_moverRay.GetComponent<XRRayInteractor>().maxRaycastDistance += t_adjustment;// * Time.deltaTime;
         else
             m_moverRay.GetComponent<XRRayInteractor>().maxRaycastDistance = 0.1f;
+    }
+
+    private void SelectedObject()
+    {
+        InputDevice device = InputDevices.GetDeviceAtXRNode(m_inputSource);
+        device.TryGetFeatureValue(CommonUsages.triggerButton, out m_isObjGrabbed);
+
+        if (!m_isObjGrabbed)
+        {
+            Instantiate<GameObject>(m_worldObject, m_moverRay.GetComponent<XRRayInteractor>().transform.position, Quaternion.identity);
+            m_objectSelected = false;
+        }
+
     }
 }
