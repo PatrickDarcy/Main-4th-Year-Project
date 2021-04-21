@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6534058710945463880}
   - component: {fileID: -211297865966908565}
   - component: {fileID: -5719054228648800554}
+  - component: {fileID: 5888854519224396886}
   m_Layer: 0
   m_Name: Ground_01 1
   m_TagString: Untagged
@@ -234,3 +235,17 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 0.25
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
+--- !u!114 &5888854519224396886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686021177304871604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 836e689ec91958f4897232283355b135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_name: 
+  m_position: {x: 0, y: 0, z: 0}

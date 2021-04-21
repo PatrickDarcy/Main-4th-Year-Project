@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 5371485246626056766}
   - component: {fileID: -5859146427283126062}
   - component: {fileID: -9044345067058013527}
+  - component: {fileID: 3603368246478953734}
+  - component: {fileID: 4303843659849824427}
   m_Layer: 0
   m_Name: Mushroom2 1
   m_TagString: Collectable
@@ -188,3 +190,31 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 0.25
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
+--- !u!114 &3603368246478953734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5440707293445505367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 836e689ec91958f4897232283355b135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_name: 
+  m_position: {x: 0, y: 0, z: 0}
+--- !u!114 &4303843659849824427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5440707293445505367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 836e689ec91958f4897232283355b135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_name: 
+  m_position: {x: 0, y: 0, z: 0}

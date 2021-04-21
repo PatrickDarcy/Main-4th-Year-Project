@@ -10,6 +10,7 @@ public class ShapeData : MonoBehaviour
     private void Start()
     {
         m_position = gameObject.transform.position;
+        m_name = gameObject.name;
     }
 
     private void Update()

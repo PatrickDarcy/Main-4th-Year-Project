@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7007591236292485129}
   - component: {fileID: 2272629149506775129}
   - component: {fileID: 7713204876521889863}
+  - component: {fileID: 6520333727388642970}
   m_Layer: 0
   m_Name: Rock_01 1
   m_TagString: Untagged
@@ -188,3 +189,17 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 0.25
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
+--- !u!114 &6520333727388642970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7405846476849542632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 836e689ec91958f4897232283355b135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_name: 
+  m_position: {x: 0, y: 0, z: 0}

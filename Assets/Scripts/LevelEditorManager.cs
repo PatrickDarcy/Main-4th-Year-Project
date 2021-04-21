@@ -37,7 +37,7 @@ public class LevelEditorManager : MonoBehaviour
     public void RayLengthAdjuster(float t_adjustment)
     {
         if (m_moverRay.GetComponent<XRRayInteractor>().maxRaycastDistance > 0)
-            m_moverRay.GetComponent<XRRayInteractor>().maxRaycastDistance += t_adjustment;// * Time.deltaTime;
+            m_moverRay.GetComponent<XRRayInteractor>().maxRaycastDistance += t_adjustment;
         else
             m_moverRay.GetComponent<XRRayInteractor>().maxRaycastDistance = 0.1f;
     }
@@ -53,5 +53,11 @@ public class LevelEditorManager : MonoBehaviour
             m_objectSelected = false;
         }
 
+    }
+
+    public void SaveNewLevel()
+    {
+        ShapeData[] shapes = FindObjectsOfType<ShapeData>();
+        LevelSave.SaveLevel(shapes);
     }
 }

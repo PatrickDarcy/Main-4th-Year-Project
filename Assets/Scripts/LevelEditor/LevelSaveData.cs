@@ -23,7 +23,7 @@ public class LevelSave
 {
     static string s_jsonPath = Application.dataPath + "/Resources/";
 
-    static public void Save(ShapeData[] t_shapes, InventoryData t_inventory)
+    static public void SaveGameplay(ShapeData[] t_shapes, InventoryData t_inventory)
     {
         LevelData levelData = new LevelData();
 
@@ -59,4 +59,26 @@ public class LevelSave
         }
         return null;
     }
+    static public void SaveLevel(ShapeData[] t_shapes)
+    {
+        float m_numberOfLevel = 0;
+        LevelData levelData = new LevelData();
+
+        foreach (ShapeData shape in t_shapes)
+        {
+            SaveShapeData shapeData = new SaveShapeData();
+
+            shapeData.name = shape.name;
+            shapeData.objectPosition = shape.m_position;
+
+            levelData.m_saveShapeDatas.Add(shapeData);
+        }
+
+        m_numberOfLevel++;
+        string jsonData = JsonUtility.ToJson(levelData, true);
+        string fullPath = s_jsonPath + "Level" + m_numberOfLevel + ".txt";
+
+        System.IO.File.WriteAllText(fullPath, jsonData);
+    }
+
 }

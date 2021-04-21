@@ -138,6 +138,6 @@ public class GameController : MonoBehaviour
     {
         ShapeData[] shapes = FindObjectsOfType<ShapeData>();
         InventoryData inventoryData = FindObjectOfType<InventoryData>();
-        LevelSave.Save(shapes,inventoryData);
+        LevelSave.SaveGameplay(shapes,inventoryData);
     }
 }
