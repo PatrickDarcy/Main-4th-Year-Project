@@ -7,13 +7,15 @@ public class MenuController : MonoBehaviour
 {
     public void PlayNewGame()
     {
+        LevelSave.ClearInventory();
+        LevelSave.loadLevel();
         SceneManager.LoadScene("Gameplay Scene");
     }
 
     public void ContinueGame()
     {
-        SceneManager.LoadScene("Gameplay Scene");
         LevelSave.loadLevel();
+        SceneManager.LoadScene("Gameplay Scene");
     }
 
     public void MapMaker()

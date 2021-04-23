@@ -22,7 +22,6 @@ public class SaveInventoryData
 public class LevelSave
 {
     static string s_jsonPath = Application.dataPath + "/Resources/";
-
     static public void SaveGameplay(ShapeData[] t_shapes, InventoryData t_inventory)
     {
         LevelData levelData = new LevelData();
@@ -41,8 +40,21 @@ public class LevelSave
         SaveInventoryData inventoryData = new SaveInventoryData();
         inventoryData.itemTypes = t_inventory.m_inventoryItems;
         levelData.m_saveInventoryData = inventoryData;
-
+        
         string jsonData = JsonUtility.ToJson(levelData, true);
+        string fullPath = s_jsonPath + "BOB" + ".txt";
+
+        System.IO.File.WriteAllText(fullPath, jsonData);
+    }
+
+    static public void ClearInventory()
+    {
+        TextAsset loadFile = Resources.Load<TextAsset>("BOB");
+        LevelData loadLevel = JsonUtility.FromJson<LevelData>(loadFile.text);
+
+        loadLevel.m_saveInventoryData.itemTypes.Clear();
+
+        string jsonData = JsonUtility.ToJson(loadLevel, true);
         string fullPath = s_jsonPath + "BOB" + ".txt";
 
         System.IO.File.WriteAllText(fullPath, jsonData);
@@ -54,7 +66,6 @@ public class LevelSave
         if(loadFile != null)
         {
             LevelData loadLevel = JsonUtility.FromJson<LevelData>(loadFile.text);
-
             return loadLevel;
         }
         return null;
@@ -80,5 +91,4 @@ public class LevelSave
 
         System.IO.File.WriteAllText(fullPath, jsonData);
     }
-
 }

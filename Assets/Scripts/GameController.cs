@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 enum Objects
 {
@@ -130,14 +131,15 @@ public class GameController : MonoBehaviour
                         break;
                 }
             }
-
+            m_playerBackPack.GetComponent<InventoryScript>().SetupSavedInventory(levelData);
         }
     }
 
-    private void OnApplicationQuit()
+    public void SaveGame()
     {
         ShapeData[] shapes = FindObjectsOfType<ShapeData>();
         InventoryData inventoryData = FindObjectOfType<InventoryData>();
         LevelSave.SaveGameplay(shapes,inventoryData);
+        SceneManager.LoadScene("MainMenu");
     }
 }
