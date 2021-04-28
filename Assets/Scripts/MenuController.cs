@@ -23,6 +23,11 @@ public class MenuController : MonoBehaviour
         SceneManager.LoadScene("LevelEditor");
     }
 
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void Exit()
     {
         Application.Quit();
