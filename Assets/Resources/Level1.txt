@@ -1,22 +1,6 @@
 {
     "m_saveShapeDatas": [
         {
-            "name": "Rock_01 1(Clone)",
-            "objectPosition": {
-                "x": -0.041773878037929538,
-                "y": 1.4925942420959473,
-                "z": -3.7961013317108156
-            }
-        },
-        {
-            "name": "Mushroom1 1(Clone)",
-            "objectPosition": {
-                "x": -0.19538761675357819,
-                "y": 1.7857180833816529,
-                "z": -3.582129716873169
-            }
-        },
-        {
             "name": "Ground_01",
             "objectPosition": {
                 "x": 0.0,
