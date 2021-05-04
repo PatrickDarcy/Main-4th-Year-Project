@@ -7,15 +7,13 @@ public class MenuController : MonoBehaviour
 {
     public void PlayNewGame()
     {
-        LevelSave.ClearInventory();
-        LevelSave.loadLevel();
-        SceneManager.LoadScene("Gameplay Scene");
+        SceneManager.LoadScene("MapSelect");
     }
 
     public void ContinueGame()
     {
-        LevelSave.loadLevel();
         SceneManager.LoadScene("Gameplay Scene");
+        LevelSave.loadLevel();
     }
 
     public void MapMaker()
@@ -27,9 +25,20 @@ public class MenuController : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
-
     public void Exit()
     {
         Application.Quit();
+    }
+    public void DefaultMap()
+    {
+        LevelSave.SetCurrentLevel("BOB");
+        SceneManager.LoadScene("Gameplay Scene");
+        LevelSave.loadLevel();
+    }
+    public void CustomMap()
+    {
+        LevelSave.SetCurrentLevel("Level1");
+        SceneManager.LoadScene("Gameplay Scene");
+        LevelSave.loadLevel();
     }
 }

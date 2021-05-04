@@ -21,7 +21,8 @@ enum Objects
     Tree_01,
     Tree_02,
     Tree_03,
-    Wood
+    Wood,
+    Spawner
 }
 
 public class GameController : MonoBehaviour
@@ -106,6 +107,10 @@ public class GameController : MonoBehaviour
                     case "Wood(Clone)":
                         GameObject Wood = Instantiate<GameObject>(m_shapes[(int)Objects.Wood]);
                         Wood.transform.position = shape.objectPosition;
+                        break;
+                    case "EnemySpawner(Clone)":
+                        GameObject Spawner = Instantiate<GameObject>(m_shapes[(int)Objects.Spawner]);
+                        Spawner.transform.position = shape.objectPosition;
                         break;
                     default:
                         break;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.SceneManagement;
 
 public class LevelEditorManager : MonoBehaviour
 {
@@ -59,5 +60,6 @@ public class LevelEditorManager : MonoBehaviour
     {
         ShapeData[] shapes = FindObjectsOfType<ShapeData>();
         LevelSave.SaveLevel(shapes);
+        SceneManager.LoadScene("MainMenu");
     }
 }

@@ -19,9 +19,16 @@ public class SaveInventoryData
     public List<collectables> itemTypes = new List<collectables>();
 }
 
+[System.Serializable]
 public class LevelSave
 {
     static string s_jsonPath = Application.dataPath + "/Resources/";
+    static string s_currentLevel;
+
+    static public void SetCurrentLevel(string t_currentString)
+    {
+        s_currentLevel = t_currentString;
+    }
     static public void SaveGameplay(ShapeData[] t_shapes, InventoryData t_inventory)
     {
         LevelData levelData = new LevelData();
@@ -42,26 +49,26 @@ public class LevelSave
         levelData.m_saveInventoryData = inventoryData;
         
         string jsonData = JsonUtility.ToJson(levelData, true);
-        string fullPath = s_jsonPath + "BOB" + ".txt";
+        string fullPath = s_jsonPath + s_currentLevel + ".txt";
 
         System.IO.File.WriteAllText(fullPath, jsonData);
     }
 
     static public void ClearInventory()
     {
-        TextAsset loadFile = Resources.Load<TextAsset>("BOB");
+        TextAsset loadFile = Resources.Load<TextAsset>(s_currentLevel);
         LevelData loadLevel = JsonUtility.FromJson<LevelData>(loadFile.text);
 
         loadLevel.m_saveInventoryData.itemTypes.Clear();
 
         string jsonData = JsonUtility.ToJson(loadLevel, true);
-        string fullPath = s_jsonPath + "BOB" + ".txt";
+        string fullPath = s_jsonPath + s_currentLevel + ".txt";
 
         System.IO.File.WriteAllText(fullPath, jsonData);
     }
     static public LevelData loadLevel()
     {
-        TextAsset loadFile = Resources.Load<TextAsset>("BOB");
+        TextAsset loadFile = Resources.Load<TextAsset>(s_currentLevel);
         Debug.Log(loadFile.text);
         if(loadFile != null)
         {

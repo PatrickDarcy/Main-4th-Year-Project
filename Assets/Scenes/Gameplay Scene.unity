@@ -5647,6 +5647,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_playerHealth: 0
+  m_moverRay: {fileID: 0}
+  m_inputSource: 0
+  projectile: {fileID: 8391974244999009008, guid: 95a2ddfcbd3833a4591648a6314e6c50,
+    type: 3}
 --- !u!1001 &1952734795
 PrefabInstance:
   m_ObjectHideFlags: 0

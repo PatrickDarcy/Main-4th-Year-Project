@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: db44c8167dee1a44c86616698837f840
@@ -17,6 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gameplay Scene.unity
     guid: 9b4e37bcc5f1cc3418ebb61d38034ea8
+  - enabled: 1
+    path: Assets/Scenes/LoseScreen.unity
+    guid: 5ba348e02b3eb4d4182a7dc4b48f7498
+  - enabled: 1
+    path: Assets/Scenes/MapSelect.unity
+    guid: 7ecdcdeaa9d47b24fb677f04ecae39fb
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 11c9224b8041b2a4d8f6c3bde4f56d89,
       type: 2}

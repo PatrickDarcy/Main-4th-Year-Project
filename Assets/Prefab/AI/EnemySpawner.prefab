@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 282714912774536006}
   - component: {fileID: 282714912774536001}
   - component: {fileID: 282714912774536000}
+  - component: {fileID: 1580987944131054517}
   m_Layer: 10
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -99,6 +100,20 @@ MonoBehaviour:
   m_enemyAi: {fileID: 2693495745771575760, guid: 85dce4a14218dfb4c81f4b92b73d4b0b,
     type: 3}
   m_delay: 10
+--- !u!114 &1580987944131054517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282714912774536003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 836e689ec91958f4897232283355b135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_name: 
+  m_position: {x: 0, y: 0, z: 0}
 --- !u!1 &282714913932904938
 GameObject:
   m_ObjectHideFlags: 0
